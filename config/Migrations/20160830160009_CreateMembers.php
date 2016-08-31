@@ -32,7 +32,7 @@ class CreateMembers extends AbstractMigration
         ]);
         $table->addColumn('idParent', 'uuid', [
             'default' => null,
-            'null' => false,
+            'null' => true,
         ]);
         $table->addColumn('created', 'datetime', [
             'default' => null,
