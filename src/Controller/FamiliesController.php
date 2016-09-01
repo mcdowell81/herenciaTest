@@ -37,7 +37,9 @@ class FamiliesController extends AppController
             'contain' => []
         ]);
 
-        $this->set('family', $family);
+        $members = $this->Families->getFamilyMembers($id);
+
+        $this->set(compact('family', 'members'));
         $this->set('_serialize', ['family']);
     }
 

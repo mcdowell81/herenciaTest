@@ -37,6 +37,11 @@ class MembersTable extends Table
         $this->primaryKey('id');
 
         $this->addBehavior('Timestamp');
+
+        $this->hasMany('Holdings', [
+            'className' => 'Holdings',
+            'foreignKey' => 'idMember'
+        ]);
     }
 
     /**

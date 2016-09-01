@@ -43,13 +43,33 @@ class HoldingsFixture extends TestFixture
     public $records = [
         [
             'id' => '7257a94d-84a7-47bb-bfac-15a329f058f3',
-            'idMember' => '4291d773-dca5-4e75-89b5-aa2bc529c9e9',
-            'units' => 1,
+            'idMember' => '4878ad85-000a-4436-a6d9-10ba860e3695',
+            'units' => 400,
             'unitValue' => 1,
             'holdingType' => 1,
             'divisible' => 1,
             'created' => '2016-08-30 16:37:15',
             'modified' => '2016-08-30 16:37:15'
         ],
+        [
+            'id' => '7257a94d-84a8-47bb-bfac-15a329f058f3',
+            'idMember' => '4878ad85-000a-4436-a6d9-10ba860e3695',
+            'units' => 200,
+            'unitValue' => 300,
+            'holdingType' => 2,
+            'divisible' => 0,
+            'created' => '2016-08-30 16:37:15',
+            'modified' => '2016-08-30 16:37:15'
+        ],
+        [
+            'id' => '7257a94d-84a9-47bb-bfac-15a329f058f3',
+            'idMember' => '4878ad85-000a-4436-a6d9-10ba860e3695',
+            'units' => 3,
+            'unitValue' => 1000000,
+            'holdingType' => 3,
+            'divisible' => 0,
+            'created' => '2016-08-30 16:37:15',
+            'modified' => '2016-08-30 16:37:15'
+        ]
     ];
 }

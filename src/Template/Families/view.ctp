@@ -28,3 +28,30 @@
         </tr>
     </table>
 </div>
+
+<div class="families view large-9 medium-8 columns content">
+    <h3>MEMBERS</h3>
+    <table class="vertical-table">
+        <?php foreach ($members as $member): ?>
+            <tr>
+                <th><?= $member->name ?></th>
+                <td>
+                    <span>HOLDING: </span>
+                    <?php foreach ($member->holdings as $holding):
+                        
+                        if ( $holding->holdingType == MONEYHOLDING ) {
+                            $unitTypeName = '€';
+                        } else if ( $holding->holdingType == GROUNDHOLDING ) {
+                            $unitTypeName = 'm2'; 
+                        } else {
+                            $unitTypeName = 'prop.';
+                        }?>
+                    
+                        <span><?= $holding->units ?> <?= $unitTypeName ?>, </span>
+                    
+                    <?php endforeach; ?>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+</div>

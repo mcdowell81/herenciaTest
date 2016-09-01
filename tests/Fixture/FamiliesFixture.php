@@ -38,8 +38,8 @@ class FamiliesFixture extends TestFixture
      */
     public $records = [
         [
-            'id' => 'c86783a0-b6a3-4ecc-b6de-7d8aab67c323',
-            'name' => 'Lorem ipsum dolor sit amet',
+            'id' => 'c86783a0-0001-4ecc-b6de-7d8aab67c323',
+            'name' => 'Family 001',
             'created' => '2016-08-30 16:37:15',
             'modified' => '2016-08-30 16:37:15'
         ],

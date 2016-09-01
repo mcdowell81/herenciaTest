@@ -37,6 +37,10 @@ class HoldingsTable extends Table
         $this->primaryKey('id');
 
         $this->addBehavior('Timestamp');
+
+        $this->belongsTo('Members', [
+            'foreignKey' => 'idMember'
+        ]);
     }
 
     /**

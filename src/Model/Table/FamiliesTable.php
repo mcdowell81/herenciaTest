@@ -5,6 +5,7 @@ use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use Cake\ORM\TableRegistry;
 
 /**
  * Families Model
@@ -37,6 +38,10 @@ class FamiliesTable extends Table
         $this->primaryKey('id');
 
         $this->addBehavior('Timestamp');
+
+        $this->belongsTo('Members', [
+            'foreignKey' => 'idMember'
+        ]);
     }
 
     /**
@@ -60,6 +65,24 @@ class FamiliesTable extends Table
 
     public function getFamilyMembers($idFamily = null)
     {
-        
+        $membersTable = TableRegistry::get('Members');
+
+        $members = $membersTable->find()
+            ->contain(['Holdings'])
+            ->where(['idFamily' => $idFamily])
+            ->order(['Members.name' => 'ASC']);
+
+        return $members;
+    }
+
+    public function getFamilyHeritage($idFamily = null)
+    {
+        $membersTable = TableRegistry::get('Members');
+
+        $members = $membersTable->find()
+            ->where(['idFamily' => $idFamily]);
+
+        return $members;
+
     }
 }

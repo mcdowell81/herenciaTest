@@ -64,7 +64,7 @@
                 }
             ?>
             <tr>
-                <th><?= $holding->units ?> <?= $unitTypeName ?></ths>
+                <th><?= $holding->units ?> <?= $unitTypeName ?></th>
             </tr>
         <?php endforeach; ?>
     </table>
